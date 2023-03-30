@@ -10,7 +10,6 @@ on:
       - '**/*.gitignore'
       - '**/*.eslintrc.json'
       - '**/*.dockerignore'
-      - '.github/**'
   workflow_dispatch:
 
 jobs:
@@ -21,10 +20,10 @@ jobs:
       BUILD_BRANCH: '${{ github.ref_name }}'
       GITHUB_TOKEN: '${{ secrets.GIT_TOKEN }}'
       GIT_USER: '${{ secrets.GIT_USER }}'
+      REPO_FULL_NAME: '${{ github.GITHUB_REPOSITORY }}'
     steps:
       - name: Clone project
         run: |
-          REPO_FULL_NAME=${{ github.GITHUB_REPOSITORY }}
           REPO_NAME=${REPO_FULL_NAME#*/}
           cd ..
           rm -rf ${REPO_NAME}
