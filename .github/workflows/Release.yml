@@ -20,7 +20,7 @@ jobs:
       BUILD_BRANCH: '${{ github.ref_name }}'
       GITHUB_TOKEN: '${{ secrets.GIT_TOKEN }}'
       GIT_USER: '${{ secrets.GIT_USER }}'
-      REPO_FULL_NAME: '${{ github.GITHUB_REPOSITORY }}'
+      REPO_FULL_NAME: '${{ github.repository }}'
     steps:
       - name: Clone project
         run: |
