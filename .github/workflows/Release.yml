@@ -1,13 +1,45 @@
-name: Release
+name: Test and Release
 
 on:
   push:
     branches: 
       - main
+    paths-ignore:
+      - '**.md'
+      - 'LICENSE'
+      - '**/*.gitignore'
+      - '**/*.eslintrc.json'
+      - '**/*.dockerignore'
+      - '.github/**'
+  workflow_dispatch:
 
 jobs:
-  release-on-push:
-    runs-on: [builder, dockered]
+  tests:
+    name: Tests
+    runs-on: [self-hosted, macOS]
+    env:
+      BUILD_BRANCH: '${{ github.ref_name }}'
+      GITHUB_TOKEN: '${{ secrets.GIT_TOKEN }}'
+      GIT_USER: '${{ secrets.GIT_USER }}'
+    steps:
+      - name: Clone project
+        run: |
+          REPO_FULL_NAME=${{ github.GITHUB_REPOSITORY }}
+          REPO_NAME=${REPO_FULL_NAME#*/}
+          cd ..
+          rm -rf ${REPO_NAME}
+          git clone -b ${BUILD_BRANCH} https://${GIT_USER}:${GITHUB_TOKEN}@github.com/${REPO_FULL_NAME}.git
+
+      - name: Build
+        run: swift build
+      - name: Tests
+        run: swift test
+
+  release:
+    name: Release
+    if: ${{ success() }}
+    runs-on: [self-hosted, ubuntu]
+    needs: [tests]
     env:
       GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
     steps:

@@ -7,13 +7,18 @@
 //
 #if canImport(UIKit)
 import UIKit
+#else
+import Foundation
+#endif
 
 open class ColorModel: Identifiable, Codable {
 
     public let id: Int
     public let hex: String
 
+#if canImport(UIKit)
     public var uiColor: UIColor { UIColor.make(from: hex) }
+    #endif
 
     public init(id: ColorModel.ID, hex: String) {
         self.id = id
@@ -36,4 +41,3 @@ extension ColorModel: Hashable, Equatable {
     }
 
 }
-#endif
