@@ -23,10 +23,10 @@ jobs:
       REPO_FULL_NAME: '${{ github.repository }}'
     steps:
       - name: Setup Swift
-        uses: swift-actions/setup-swift@v2
+        uses: YOCKOW/Action-setup-swift@v1
         with:
           swift-version: '5.7'
-          
+
       - name: Clone project
         run: |
           REPO_NAME=${REPO_FULL_NAME#*/}
