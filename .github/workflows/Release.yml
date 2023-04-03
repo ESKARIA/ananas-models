@@ -22,17 +22,17 @@ jobs:
       GIT_USER: '${{ secrets.GIT_USER }}'
       REPO_FULL_NAME: '${{ github.repository }}'
     steps:
-      - name: Setup Swift
-        uses: YOCKOW/Action-setup-swift@v1
-        with:
-          swift-version: '5.7'
-
       - name: Clone project
         run: |
           REPO_NAME=${REPO_FULL_NAME#*/}
           cd ..
           rm -rf ${REPO_NAME}
           git clone -b ${BUILD_BRANCH} https://${GIT_USER}:${GITHUB_TOKEN}@github.com/${REPO_FULL_NAME}.git
+
+      - name: Setup Swift
+        uses: YOCKOW/Action-setup-swift@v1
+        with:
+          swift-version: '5.7'
 
       - name: Build
         run: swift build
