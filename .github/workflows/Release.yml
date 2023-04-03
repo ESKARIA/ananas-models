@@ -31,6 +31,7 @@ jobs:
 
       - name: Setup Swift
         uses: YOCKOW/Action-setup-swift@v1
+        continue-on-error: true
         with:
           swift-version: '5.7'
 
