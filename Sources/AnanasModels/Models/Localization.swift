@@ -18,12 +18,10 @@ public enum Localization: String, Codable, CaseIterable {
     case it
     case zh
 
-    static func initial(rawText: String) -> Localization {
+    public static func initial(rawText: String) -> Localization {
         let lowercased = rawText.lowercased()
         let containsRu = lowercased.contains("ru")
-        if containsRu {
-            return .ru
-        }
+        if containsRu { return .ru }
         let components = lowercased.components(separatedBy: "_")
         for loc in Localization.allCases {
             if components.contains(loc.rawValue) {
