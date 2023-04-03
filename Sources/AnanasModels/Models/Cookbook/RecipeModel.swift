@@ -8,16 +8,6 @@
 
 import Foundation
 
-public enum Localization: String, Codable, CaseIterable {
-    case ru
-    case en
-    case fr
-    case de
-    case es
-    case it
-    case zh
-}
-
 open class RecipeModel: Identifiable, Codable {
 
     public let id: Int
