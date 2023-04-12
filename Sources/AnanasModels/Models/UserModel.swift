@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class UserModel: Identifiable, Codable {
+public final class UserModel: Identifiable, Codable {
 
     public let id: String
     public let email: String

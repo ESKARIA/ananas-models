@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class RecipeModel: Identifiable, Codable {
+public final class RecipeModel: Identifiable, Codable {
 
     public let id: Int
     public let owner: OwnerSmartModel

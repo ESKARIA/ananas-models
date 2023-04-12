@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class ProductModel: Codable {
+public final class ProductModel: Codable {
 
     public let category: CategoryModel
     public let items: [ItemModel]

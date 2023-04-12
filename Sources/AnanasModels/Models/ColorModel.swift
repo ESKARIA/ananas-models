@@ -11,7 +11,7 @@ import UIKit
 import Foundation
 #endif
 
-open class ColorModel: Identifiable, Codable {
+public final class ColorModel: Identifiable, Codable {
 
     public let id: Int
     public let hex: String

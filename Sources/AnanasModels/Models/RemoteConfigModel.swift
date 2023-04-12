@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class RemoteConfigModel: Codable {
+public final class RemoteConfigModel: Codable {
 
     public let version: String
     public let key: String

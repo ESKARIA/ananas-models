@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class InviteCodeModel: Codable {
+public final class InviteCodeModel: Codable {
     
     public let code: String
 

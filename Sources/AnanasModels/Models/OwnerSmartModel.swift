@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class OwnerSmartModel: Identifiable, Codable {
+public final class OwnerSmartModel: Identifiable, Codable {
 
     public let id: String
     public let username: String

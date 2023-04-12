@@ -11,7 +11,7 @@ import Foundation
 public typealias Messages = [MessageModel]
 
 // MARK: - MessageModel
-open class MessageModel: Identifiable, Codable {
+public final class MessageModel: Identifiable, Codable {
 
     public let id: String
     public let channel: UserSmart
@@ -30,7 +30,7 @@ open class MessageModel: Identifiable, Codable {
 }
 
 // MARK: - UserSmart
-open class UserSmart: Identifiable, Codable {
+public final class UserSmart: Identifiable, Codable {
 
     public let id: String
     public let username: String

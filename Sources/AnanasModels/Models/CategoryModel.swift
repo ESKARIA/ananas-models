@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class CategoryModel: Identifiable, Codable {
+public final class CategoryModel: Identifiable, Codable {
 
     public let id: String
     public let title: String

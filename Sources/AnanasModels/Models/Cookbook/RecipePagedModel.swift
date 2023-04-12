@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class RecipePagedModel {
+public final class RecipePagedModel {
 
     public let recipes: [RecipeModel]
     public let metadata: PageModel

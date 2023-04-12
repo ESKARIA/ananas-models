@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class RecipeStepModel: Identifiable, Codable {
+public final class RecipeStepModel: Identifiable, Codable {
 
     public let id: String
     public let step: Int

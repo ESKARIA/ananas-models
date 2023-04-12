@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class PageModel: Codable {
+public final class PageModel: Codable {
 
     public let page: Int
     public let per: Int

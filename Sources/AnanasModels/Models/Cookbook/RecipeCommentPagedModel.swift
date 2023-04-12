@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class RecipeCommentPagedModel {
+public final class RecipeCommentPagedModel {
 
     public let comments: [RecipeCommentModel]
     public let metadata: PageModel

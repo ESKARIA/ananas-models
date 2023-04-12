@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class ListModel: Identifiable, Codable {
+public final class ListModel: Identifiable, Codable {
 
     public let id: String
     public let title: String

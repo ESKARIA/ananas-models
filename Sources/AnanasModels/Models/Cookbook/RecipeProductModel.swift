@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class RecipeProductModel: Identifiable, Codable {
+public final class RecipeProductModel: Identifiable, Codable {
     
     public let id: String
     public let title: String
