@@ -10,12 +10,10 @@ import Foundation
 
 public final class RemoteConfigModel: Codable {
 
-    public let version: String
     public let key: String
     public let value: String
 
-    public init(version: String, key: String, value: String) {
-        self.version = version
+    public init(key: String, value: String) {
         self.key = key
         self.value = value
     }
