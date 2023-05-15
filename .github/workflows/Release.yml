@@ -30,9 +30,9 @@ jobs:
           rm -rf ${REPO_NAME}
           git clone -b ${BUILD_BRANCH} https://${GIT_USER}:${GITHUB_TOKEN}@github.com/${REPO_FULL_NAME}.git
 
-      - name: Remove Swift
-        run: |
-          rm -rf /root/action-setup-swift-workspace
+      # - name: Remove Swift
+      #   run: |
+      #     rm -rf /root/action-setup-swift-workspace
 
       - name: Setup Swift
         uses: YOCKOW/Action-setup-swift@v1
